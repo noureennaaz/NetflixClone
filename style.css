@@ -1,43 +1,69 @@
 *{
     margin: 0;
     padding: 0;
-    color: white;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 
 }
-/* font-family: 'Roboto', sans-serif; */
+html,body{
+margin: 0;
+padding: 0;
+}
+
 :root {
     --red: #E50914;
+    --var-height:100vh;
+}
+
+.backgrounddiv{
+    width:100%;
+    height:var(--var-height);
+    position: absolute;
+    z-index: 1;
+    background-color: #000000;
+    opacity: .6;
+}
+.backgroundlogo{
+    position: absolute;
+    width: 100%; 
+    height:var(--var-height); 
+    /* object-fit: contain; */
+    /* background-color: #000000; */
 }
 .wrapper{
     background-color: #232323;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: white;
     
 }
 .nav{
     display: flex;  
-    margin: .2rem auto;
-    width: 77%;
+    margin: 0 10rem;
+    padding:1rem 0;
+    min-width: 77vw;
     justify-content: space-between;
+    z-index: 9;
 }
 
 svg{
     width:49%;
     padding-top: 20px;
+    z-index: 8;
+    position: relative;
     
 }
 
 .heroSection
 {
     margin-top: 0;
-    height: 100vh;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-image:radial-gradient(#0504049f, rgba(0, 0, 0, 0.603)),  url('./assets/background.jpg');
-    box-shadow: inset 0 0 1800px #000000;
-    background-size: 100%;
-    /* background-position:  -180px; */
-    /* background-size: 130%; */
+    min-height: var(--var-height);
+    z-index: 9;
+    display: flex;
+    flex-direction: column;
+    
+   
 }
 .button
 {
@@ -49,6 +75,7 @@ svg{
     border: none;
     border-radius: 5px;
     font-weight: bolder;
+    font-size: 14px;
     
     
 }
@@ -59,53 +86,76 @@ svg{
     font-size:15px;
 }
 
-.lang{
-    display: inline-block;
-    position: relative;
-    background-color: #000000;
-    /* min-width: 90px; */
-    border-radius: 5px;
-    padding: 3px 5px;
-    margin:10px 10px;
+.box{
     
+    min-width:fit-content;
+    height:100%;
 }
 
 .heading{
     font-weight: 900;
     font-size:50px;
+    
 }
 .nav2{
     display: flex;
     flex-direction: row;
     align-items: stretch;
     margin-top: 10px;
+    position: relative;
 }
 .button i 
 {
     transform: translateY(2px);
 }
 
-
+.content-center{
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    width:100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    
+}
 select
 {
-    border: none;
-    outline: none;
+    position: relative;
+    top:0;
+    left:0;
+    border-radius: 5px;
+    padding: .5rem 2rem .5rem 2rem ;
+    margin: 10px 20px;
     color: white;
     background-color: transparent;
-    font-size: medium;
-    transform: translateX(4px);
+    transform: translate(13px , -2px);
+    background-color: #000000b7;
+    appearance: none;
+    font-size: 15px;
+    
+    
+}
+select:focus-within
+{
+    border: 2px solid transparent;
+    outline: 2px solid white;
+}
+option{
+    background-color: white;
 }
 
 
 .icon-bg{
-    background-image: url('./assets/meridianglobe.jpg');
+   
     position: absolute;
-    transform: translateY(10%) translateX(-30%);
-    width: 24px;
-    height: 24px;
-    background-size: 80%;
-    background-repeat: no-repeat;
     
+    top:1rem;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-left: 2.5rem;
+    
+    z-index: 9;
 }
 .getStarted
 {
@@ -114,28 +164,37 @@ select
     align-items: center;
     justify-content: center;
     color: white;
-    min-height: 100%;
-    width: 90%;
-    margin: 0 auto;
+    height: 100%;
+    width: 80%;
+    max-width: 100%;
+    z-index: 7;
+    transform: translateY(2rem);
+    
 }
 .SubHead{
     font-size: 25px;
     padding: 20px 20px 20px 0px;
   }
+
+.text-Signup{
+    width:100%;
+    height: 100%;
+}
   .text-3
 {
+    text-align: center;
     padding-top: 10px;
     font-size: 21px;
 }
 .input {
     background-color: rgba(36, 34, 34, 0.74);
-    /* border: 1px solid white; */
     border-radius: 5px;
     margin: 1rem 0rem;
     outline: none;
     box-sizing: border-box;
     color:white;
-    width:60%;
+    flex-grow: 1;
+    max-width:80%;
     position: relative;
     transition: all ease-in;
    
@@ -158,19 +217,26 @@ select
     
 }
 .button2{
-    /* padding: 20px 20px;
-    width: 1fr;
-    margin-left: .5rem; */
+    
     font-size: 1.5rem;
     padding: .8rem 1.5rem;
 }
+
 .Signup
 {
-    width:40rem;
+    margin :0 auto;
     display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     gap:5px;
     position: relative;
     justify-content: center;
+    -moz-user-select: none;
+    user-select: none;
+    box-sizing: border-box;
+    max-width: 38rem;
+    flex-basis: 1;
+    
 }
 .Placeholder{
     position: absolute;
@@ -223,6 +289,10 @@ section{
     gap:10px;
     margin:10px auto;
 }
+.section-3{
+    flex-wrap: wrap-reverse;
+
+}
 .ContentRight
 {
     width: 500px;
@@ -246,7 +316,7 @@ img{
 }
 .video1
 {
-    width: 90%;
+    max-width: 90%;
     padding: 4.4rem 0rem 3rem 4rem;
     top:0;
     left:0;
@@ -254,7 +324,8 @@ img{
 .video2{
     top:0;
     left:0;
-    transform: scale(.67);
+    transform: scale(.70) translate(2rem,-.5rem );
+    max-width: 90%;
     
 }
 .leftParent{
@@ -265,17 +336,16 @@ img{
     border:2px solid #595959 ;
     bottom:2rem;
     left:6rem;
-   justify-content: space-around;
+    justify-content: space-around;
     border-radius: 10px;
     display: flex;
     align-items: center;
-    min-height: 6rem ;
-    width: 60%;
+    height: 6rem ;
+    width: 60%; 
     padding: .5em;
     box-sizing: border-box;
     background-color: #000000;
    
-    /* #0071EB */
 }
 .text1{
     font-weight: bolder;
@@ -284,7 +354,7 @@ img{
     color:#0071EB ;
 }
 .imgContainer{
-    height: 5rem;
+    height: 100%;
 }
 .imgContainer img{
     object-fit: cover;
@@ -294,15 +364,16 @@ img{
 .Place-download{
     background-image: url("./assets/download-icon.gif");
     background-size: contain;
-    height: 50px;
-    width:50px
+    height: 2.5rem;
+    width:2.5rem;
+    background-repeat: no-repeat;
+    
 }
 ul{
     list-style: none;
 }
 li{
     padding-top: 1rem;
-    /* padding-bottom: 1rem; */
     color: #bababae0;
     text-decoration: underline;
     font-weight: bolder;
@@ -328,4 +399,135 @@ li{
     flex-wrap: wrap;
     
     
+}
+
+.faq{
+    flex-direction: column;
+    align-items: stretch;
+    cursor: pointer;
+    
+}
+.faq .heading{
+    padding-bottom: 10px;
+}
+.faq .getStarted{
+    padding-top: 20px;
+}
+.faqblock{
+    
+    min-height: fit-content;
+    font-size: 25px;
+    font-weight: medium;
+    display: block;
+    min-width:80%;
+    margin: 0 auto;
+    
+}
+.Answer, .Questions
+{
+    background-color: #2D2D2D;
+    padding: 1.8rem;
+    
+}
+.Questions{
+    display: flex;
+    justify-content: space-between;
+    min-height: fit-content;
+    box-sizing: border-box;
+    border-bottom: solid 1px #000000;
+    user-select: none;
+}
+.hidden{
+    display: none;
+}
+.plus{
+   width:100%;
+   height: 1em;
+   width: 1em;
+   transition: transform ease-in;
+}
+.Questions:hover{
+    background-color: #4E4E4E;
+}
+.selector-icon{
+    position: absolute;
+    left:120px;
+    top:20px;
+}
+.h-center{
+    text-align: center;
+}
+.signup-2{
+    margin-top: 1.5rem;
+    align-self: center;
+}
+
+
+@media (width<976px) {
+    svg{
+        width: 9.5rem;
+        height: 2.7rem;
+    }
+
+    .heading{
+        font-size: 32px;
+    }
+
+    .SubHead,.text-3{
+        font-size: 18px;
+    }
+    .faqblock{
+        font-size: 18px;
+        width:100%;
+        margin: 0 ;
+        padding: 0;
+    }
+    .Questions{
+        padding: 24px;
+    }
+    .nav{
+        margin: 0 ;
+    }
+    select{
+        width:0;
+        padding: .5rem 2rem .5rem 1.5rem ;
+    }
+    .drop-icon{
+        transform: translate(-3.5rem,0rem);
+    }
+    .Place-download{
+        align-self: stretch;
+        background-size: cover;
+    }
+    
+    .text1{
+        font-size: 14px;
+    }
+    .text-download{
+        font-size: 12px;
+    }
+    
+    :root{
+        --var-height:85vh;
+    }
+}
+@media (width<586px) {
+    .video1{
+        padding: 2rem 0rem 0rem 2rem ;
+    }
+
+    .animatedDiv{
+        font-size: 16px;
+        margin:0;
+        height:4rem;
+        padding: .2rem;
+        width: 70vw;
+        left:0;
+        bottom:0;
+       
+    }
+    .video2{
+        transform: translate(.9rem,0) scale(.7);
+    }
+   
 }
