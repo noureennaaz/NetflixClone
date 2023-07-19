@@ -23,6 +23,3 @@ blocks.forEach(element => {
         
     )
 });
-
-
-// document.body.addEventListener

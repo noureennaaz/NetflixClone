@@ -512,6 +512,9 @@ li{
     }
 }
 @media (width<586px) {
+    :root{
+        --var-height:100vh;
+    }
     .video1{
         padding: 2rem 0rem 0rem 2rem ;
     }
@@ -529,5 +532,8 @@ li{
     .video2{
         transform: translate(.9rem,0) scale(.7);
     }
+   .footer{
+    padding: 3rem;
+   }
    
 }
